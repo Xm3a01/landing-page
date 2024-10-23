@@ -33,7 +33,7 @@ jobs:
           docker cp $container_id:/usr/share/nginx/html ./build
           # Clean up the container
           docker rm $container_id
-          
+
       - name: Deploy using FTP
         if: success()
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -41,5 +41,5 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./build
+          local-dir: ./build/
           server-dir: ${{secrets.FTP_PATH}}/resume/
