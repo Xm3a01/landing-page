@@ -1,11 +1,8 @@
 import {FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaDownload} from 'react-icons/fa'
 import hello from '../assets/images/hello.svg';
-import wave from '../assets/images/wave-bg.svg';
+import wave from '../assets/images/wave.svg';
 
 const Hero = () => {
-    const style = {
-        backgroundImage:`url(${wave})`
-    }
     return (
         <div className="w-full flex justify-center relative bg-[#f4f6f8]">
             <div className="flex gap-x-20 mt-8 w-2/3">
@@ -30,7 +27,9 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-64 absolute transition-transform origin-top -bottom-64" style={style}></div>
+            <div className="w-full h-64 absolute transition-transform origin-top -bottom-64">
+                <img src={wave} alt={''} className="w-full h-full inset-0"/>
+            </div>
         </div>
     );
 };
